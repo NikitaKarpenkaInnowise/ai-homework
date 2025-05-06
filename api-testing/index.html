@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Testing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>API Test Results</h1>
+    <div class="test-results">
+        <pre id="results"></pre>
+    </div>
+
+    <script>
+        // Redirect console output to the results div
+        const resultsDiv = document.getElementById('results');
+        const originalConsole = {
+            log: console.log,
+            error: console.error
+        };
+
+        console.log = function(...args) {
+            originalConsole.log(...args);
+            resultsDiv.textContent += args.join(' ') + '\n';
+        };
+
+        console.error = function(...args) {
+            originalConsole.error(...args);
+            resultsDiv.textContent += '🔴 ' + args.join(' ') + '\n';
+        };
+    </script>
+    <script src="apiTest.js"></script>
+</body>
+</html> 

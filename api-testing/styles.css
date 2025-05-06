@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.test-results {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.test-results pre {
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+}
+
+/* Add color highlighting for test results */
+.test-results pre :global(*) {
+    font-family: 'Consolas', monospace;
+} 
